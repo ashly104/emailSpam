@@ -1,5 +1,5 @@
 from flask import Flask, render_template, json, request,redirect,session,jsonify, url_for
-from flask.ext.mysql import MySQL
+from flask.ext.mysqldb import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 from werkzeug.wsgi import LimitedStream
 import uuid
@@ -11,7 +11,7 @@ app.secret_key = 'why would I tell you my secret key?'
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'qburst'
+app.config['MYSQL_DATABASE_PASSWORD'] =''
 app.config['MYSQL_DATABASE_DB'] = 'BucketList'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
@@ -399,3 +399,4 @@ def signUp():
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1',port=4005)
+
