@@ -398,4 +398,4 @@ def signUp():
         conn.close()
 
 if __name__ == "__main__":
-    app.run(host='10.3.1.9',port=4004)
+    app.run(host='127.0.0.1',port=4005)
