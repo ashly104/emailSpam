@@ -54,13 +54,9 @@ $(function(){
         var text = $("#mailSubject").val();
         var text1 =$("#mailBody").val();
         console.log("Mail subject:");
-        var a, b,c;
+        var a, b, c,d;
         a = findprofanity(text);
         //console.log(a);
-        if(a == true)
-        {
-           $("#abuse").append("Mail Contain abusive words !");
-        }
 
         b = mail_type_social(text);
         if(b != false) {
@@ -80,7 +76,11 @@ $(function(){
             $("#type").append(" GENERAL");
         }
         console.log("Mail Body: ");
-        findprofanity(text1);
+        d = findprofanity(text1);
+        if(a== true || d == true)
+        {
+           $("#abuse").append("Mail Contain abusive words !");
+        }
 
 	});
 });
