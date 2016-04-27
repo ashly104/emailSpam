@@ -83,15 +83,36 @@ $(function(){
         {
            $("#abuse").append("Mail Contain abusive words !");
         }
-
 	});
 });
 
+
 //genetics part
-    $(function(){
+$(function(){
 	$('#genetic').click(function() {
-            var population = new Population("eldhose", 4);
-            population.generation();
+
+     $.getScript('../static/js/profanityfinder.js', function()
+            {
+              // console.log(in_words);
+              var i=0,j= 0;
+              while (i < in_words.length)
+              {
+                  j=0;
+                  while(j < bad_words.length)
+                  {
+                      if(in_words[i].toUpperCase()==bad_words[j].toUpperCase())
+                      {
+                          // console.log(in_words[i]);
+                          var population = new Population(in_words[i], 4);
+                          population.generation();
+                      }
+                      j=j+1;
+                   }
+                   i=i+1;
+              }
+            });
+
+
     	});
 });
 

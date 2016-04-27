@@ -1,3 +1,5 @@
+
+var in_words;
 var bad_words=[
 "a55",
 "a55hole",
@@ -787,6 +789,7 @@ function mail_type_social(input) {
            if(in_words[i].toUpperCase()==social_words[j].toUpperCase())
            {
                //console.log(in_words[i]);
+               bad = in_words;
                k=1;
            }
            j=j+1;
@@ -806,7 +809,7 @@ function mail_type_social(input) {
 //promotion
 function mail_type_promotion(input) {
    input=input.replace(/[\W_]+/g," ");
-   var in_words=input.split(' ');
+   in_words=input.split(' ');
    var i=0,j= 0,k= 0;
    while (i < in_words.length)
    {
@@ -830,6 +833,7 @@ function mail_type_promotion(input) {
     {
         return true;
     }
+    
 }
 
 //genetic algorithm
