@@ -724,23 +724,22 @@ var bad_words=[
 "zoophile"
 ];
 
-var social_mail = [
+var social_words = [
     "facebook",
     "twitter",
     "google",
     "tumblr",
     "yahoo",
     "microsoft"
-
 ];
 
-var promotions_mail = [
+var promotions_words = [
     "offer",
     "offers",
     "deal",
     "deals",
     "discount",
-    "discounts",
+    "discounts"
 ];
 
 //function starts here
@@ -748,13 +747,72 @@ var promotions_mail = [
 function findprofanity(input) {
    input=input.replace(/[\W_]+/g," ");
    var in_words=input.split(' ');
-   var i=0,j= 0,k=0;
+   var i=0,j= 0,k= 0;
    while (i < in_words.length)
    {
        j=0;
        while(j < bad_words.length)
        {
            if(in_words[i].toUpperCase()==bad_words[j].toUpperCase())
+           {
+               console.log(in_words[i]);
+               k=1;
+           }
+           j=j+1;
+        }
+        i=i+1;
+   }
+    if(k!=1)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+//to check mail type
+//social
+function mail_type_social(input) {
+   input=input.replace(/[\W_]+/g," ");
+   var in_words=input.split(' ');
+   var i=0,j= 0,k= 0;
+   while (i < in_words.length)
+   {
+       j=0;
+       while(j < social_words.length)
+       {
+           if(in_words[i].toUpperCase()==social_words[j].toUpperCase())
+           {
+               console.log(in_words[i]);
+               k=1;
+           }
+           j=j+1;
+        }
+        i=i+1;
+   }
+    if(k!=1)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+//promotion
+function mail_type_promotion(input) {
+   input=input.replace(/[\W_]+/g," ");
+   var in_words=input.split(' ');
+   var i=0,j= 0,k= 0;
+   while (i < in_words.length)
+   {
+       j=0;
+       while(j < promotions_words.length)
+       {
+           if(in_words[i].toUpperCase()==promotions_words[j].toUpperCase())
            {
                console.log(in_words[i]);
                k=1;

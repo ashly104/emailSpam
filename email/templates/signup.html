@@ -36,6 +36,9 @@
         <button id="btnSignUp" class="btn btn-lg btn-primary btn-block" type="button">Send</button>
       </form>
       </div>
+        <div class="jumbotron">
+<p id="type">Mail Categories are: </p>
+        </div>
         <footer class="footer">
         <p>&copy;  2016</p>
       </footer>
@@ -49,9 +52,27 @@ $(function(){
 	$('#btnSignUp').click(function() {
         var text = $("#mailSubject").val();
         //console.log(text);
-        var a;
+        var a, b,c;
         a = findprofanity(text);
         console.log(a);
+
+        b = mail_type_social(text);
+        if(b != false) {
+            //console.log(b);
+            $("#type").append(" SOCIAL");
+        }
+
+        c = mail_type_promotion(text);
+        console.log(c);
+        if(c != false) {
+            //console.log(b);
+            $("#type").append(" PROMOTION");
+        }
+        if(b==false && c ==false)
+        {
+            $("#type").append(" GENERAL");
+        }
+
 	});
 });
 
