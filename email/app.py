@@ -6,13 +6,14 @@ import uuid
 import os
 
 mysql = MySQL()
+# print mysql
 app = Flask(__name__)
 app.secret_key = 'why would I tell you my secret key?'
 
 # MySQL configurations
 app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] =''
-app.config['MYSQL_DATABASE_DB'] = 'BucketList'
+app.config['MYSQL_DATABASE_PASSWORD'] ='qburst'
+app.config['MYSQL_DATABASE_DB'] = 'emailSpam'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
@@ -371,6 +372,7 @@ def signUp():
         _name = request.form['inputName']
         _email = request.form['inputEmail']
         _password = request.form['inputPassword']
+        # print _email
 
         # validate the received values
         if _name and _email and _password:
