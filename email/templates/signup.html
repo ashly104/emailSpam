@@ -54,7 +54,7 @@ $(function(){
         //console.log(text);
         var a, b,c;
         a = findprofanity(text);
-        console.log(a);
+        //console.log(a);
 
         b = mail_type_social(text);
         if(b != false) {
@@ -68,6 +68,7 @@ $(function(){
             //console.log(b);
             $("#type").append(" PROMOTION");
         }
+
         if(b==false && c ==false)
         {
             $("#type").append(" GENERAL");
