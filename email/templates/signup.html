@@ -11,6 +11,7 @@
     <script src="../static/js/jquery-1.11.2.js"></script>
     <script src="../static/js/signUp.js"></script>
       <script src="../static/js/profanityfinder.js"></script>
+      <script src="../static/js/genetic.js"></script>
    
   </head>
 
@@ -39,6 +40,7 @@
         <div class="jumbotron">
             <p id="abuse"></p>
             <p id="type">Mail Categories are: </p>
+            <button id="genetic" class="btn btn-lg btn-primary btn-block" type="button">Run Genetics</button>
         </div>
         <footer class="footer">
         <p>&copy;  2016</p>
@@ -83,6 +85,14 @@ $(function(){
         }
 
 	});
+});
+
+//genetics part
+    $(function(){
+	$('#genetic').click(function() {
+            var population = new Population("eldhose", 4);
+            population.generation();
+    	});
 });
 
 </script>
