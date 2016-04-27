@@ -52,7 +52,8 @@
 $(function(){
 	$('#btnSignUp').click(function() {
         var text = $("#mailSubject").val();
-        //console.log(text);
+        var text1 =$("#mailBody").val();
+        console.log("Mail subject:");
         var a, b,c;
         a = findprofanity(text);
         //console.log(a);
@@ -78,6 +79,8 @@ $(function(){
         {
             $("#type").append(" GENERAL");
         }
+        console.log("Mail Body: ");
+        findprofanity(text1);
 
 	});
 });

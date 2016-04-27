@@ -786,7 +786,7 @@ function mail_type_social(input) {
        {
            if(in_words[i].toUpperCase()==social_words[j].toUpperCase())
            {
-               console.log(in_words[i]);
+               //console.log(in_words[i]);
                k=1;
            }
            j=j+1;
@@ -815,7 +815,7 @@ function mail_type_promotion(input) {
        {
            if(in_words[i].toUpperCase()==promotions_words[j].toUpperCase())
            {
-               console.log(in_words[i]);
+               //console.log(in_words[i]);
                k=1;
            }
            j=j+1;
