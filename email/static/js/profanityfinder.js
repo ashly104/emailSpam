@@ -773,6 +773,7 @@ function findprofanity(input) {
 }
 
 //to check mail type
+
 //social
 function mail_type_social(input) {
    input=input.replace(/[\W_]+/g," ");
