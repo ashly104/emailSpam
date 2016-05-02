@@ -816,6 +816,7 @@ function mail_type_promotion(input) {
        j=0;
        while(j < promotions_words.length)
        {
+
            if(in_words[i].toUpperCase()==promotions_words[j].toUpperCase())
            {
                //console.log(in_words[i]);
