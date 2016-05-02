@@ -44,6 +44,7 @@
         </div>
         <div class="jumbotron">
             <button id="neural" class="btn btn-lg btn-primary btn-block" type="button">Train Sets</button>
+            <p id="word">Appropriate trained set is: </p>
         </div>
         <footer class="footer">
         <p>&copy;  2016</p>
@@ -131,11 +132,19 @@ $(function(){
                 var j= 4,i=0;
                 while (i<in_words.length)
                 {
-                    console.log("Word set for ", in_words[i],);
+                    console.log("trained set for ", in_words[i]," is: ",j*Math.random());
                     i++;
 
 
                 }
+                var words = in_words;
+
+                var getRandomWord = function () {
+                return words[Math.floor(Math.random() * words.length)];
+                                                };
+                var word = getRandomWord();
+                console.log(word);
+                $("#word").append(word);
 
 
 
